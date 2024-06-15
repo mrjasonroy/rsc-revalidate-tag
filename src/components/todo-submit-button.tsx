@@ -8,7 +8,7 @@ export function TodoSubmitButton() {
 
   return (
     <Button type="submit" disabled={pending}>
-      {pending ? 'Updating Tood...' : 'Update Todo'}
+      {pending ? 'Updating Todo...' : 'Update Todo'}
     </Button>
   );
 }
