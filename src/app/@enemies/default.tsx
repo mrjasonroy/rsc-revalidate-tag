@@ -4,9 +4,9 @@ import { getEnemies } from '@/lib/queries';
 import { Suspense } from 'react';
 
 export default async function Default() {
-return (
-  <Suspense fallback={<div>Loading...</div>}>
-    <EnemiesLoader />
-  </Suspense>
-)
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EnemiesLoader />
+    </Suspense>
+  );
 }

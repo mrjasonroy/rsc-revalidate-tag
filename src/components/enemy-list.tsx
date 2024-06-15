@@ -9,7 +9,7 @@ function EnemyList({ enemies }: { enemies: { id: string; name: string }[] }) {
   const [stateUpdateCount, setStateUpdateCount] = useState(0);
   useEffect(() => {
     setStateUpdateCount((prev) => prev + 1);
-  },[enemies]);
+  }, [enemies]);
   return (
     <>
       {enemies.map((enemy) => (
@@ -30,11 +30,10 @@ function EnemyList({ enemies }: { enemies: { id: string; name: string }[] }) {
           Create Enemy
         </Button>
       </CreateEnemyDialog>
-      <div className="text-center text-gray-500 mt-10">
+      <div className="mt-10 text-center text-gray-500">
         {stateUpdateCount} state updates
       </div>
     </>
-    
   );
 }
 

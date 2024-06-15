@@ -44,8 +44,12 @@ function Todo({
           />
         </CardContent>
         <input type="hidden" name="id" value={todo.id} />
-        <input type="hidden" name="complete" value={isComplete === true ? 'true' : 'false'} />
-        <CardFooter className='flex justify-between'>
+        <input
+          type="hidden"
+          name="complete"
+          value={isComplete === true ? 'true' : 'false'}
+        />
+        <CardFooter className="flex justify-between">
           <TodoMarkCompleteButton
             isComplete={isComplete}
             onClick={handleMarkAsDone}

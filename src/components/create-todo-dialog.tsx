@@ -41,7 +41,11 @@ function CreateTodoDialog({ children }: { children: React.ReactNode }) {
               <Label htmlFor="description" className="text-right">
                 Description
               </Label>
-              <Textarea id="description" className="col-span-3" name="description" />
+              <Textarea
+                id="description"
+                className="col-span-3"
+                name="description"
+              />
             </div>
           </div>
           <DialogFooter>

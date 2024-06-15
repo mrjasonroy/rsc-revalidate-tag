@@ -9,6 +9,7 @@ import { EnemiesLoader } from '@/components/loaders/enemies-loader';
 import { TodoCountSkeleton, TodoListSkeleton } from '@/components/skeletons';
 import { TodoCountLoader } from '@/components/loaders/todo-count-loader';
 import { TodoListLoader } from '@/components/loaders/todo-list-loader';
+import { GithubLink } from '@/components/github-link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,9 +21,11 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
   todos,
+  enemies,
 }: Readonly<{
   children: React.ReactNode;
   todos: React.ReactNode;
+  enemies: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -30,12 +33,7 @@ export default function RootLayout({
         <div className="grid min-h-screen w-full lg:grid-cols-[280px_1fr_280px]">
           <div className="hidden border-r bg-gray-100/40 lg:block">
             <div className="flex h-full max-h-screen flex-col gap-2">
-              <Suspense fallback={<TodoCountSkeleton />}>
-                <TodoCountLoader />
-              </Suspense>
-              <Suspense fallback={<TodoListSkeleton />}>
-                <TodoListLoader />
-              </Suspense>{' '}
+              {todos}
             </div>
           </div>
           <div className="flex flex-col">
@@ -61,14 +59,13 @@ export default function RootLayout({
               </div>
               <div className="flex-1 overflow-auto py-2">
                 <nav className="grid items-start px-4 text-sm font-medium">
-                  <Suspense fallback={<div>Loading...</div>}>
-                    <EnemiesLoader />
-                  </Suspense>
+                  {enemies}
                 </nav>
               </div>
             </div>
           </div>
         </div>
+        <GithubLink />
       </body>
     </html>
   );
