@@ -19,11 +19,11 @@ This simple site has a really basic "todo" list and a list of "enemies". They ar
 
 ## Why did I make this?
 
-I was trying to show that you could use revalidateTag or revlidatePath without the whole page refreshing but it turns out I was wrong. If we are truly going to move to fetching and revalidating data on the server, we will need more fine grained control over the revalidation process. This is a simple example of how it isn't working now. 
+I was trying to show that you could use revalidateTag or revlidatePath without the whole page refreshing but it turns out I was wrong. If we are truly going to move to fetching and revalidating data on the server, we will need more fine grained control over the revalidation process. This is a simple example of how it isn't working now.
 
 ## Branches
 
-- The main branch is the example  the revalidate tag. Working example [here](https://rsc-revalidate-tag.vercel.app/)
+- The main branch is the example the revalidate tag. Working example [here](https://rsc-revalidate-tag.vercel.app/)
 - The `revalidate-path` branch is the example with the revalidate path and parallel routes. Working example [here](https://rsc-revalidate-jk3plcyuc-mrjasonroys-projects.vercel.app/)
 
 ## Learn More
