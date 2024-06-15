@@ -9,6 +9,7 @@ import { EnemiesLoader } from '@/components/loaders/enemies-loader';
 import { TodoCountSkeleton, TodoListSkeleton } from '@/components/skeletons';
 import { TodoCountLoader } from '@/components/loaders/todo-count-loader';
 import { TodoListLoader } from '@/components/loaders/todo-list-loader';
+import { GithubLink } from '@/components/github-link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -69,6 +70,7 @@ export default function RootLayout({
             </div>
           </div>
         </div>
+        <GithubLink />
       </body>
     </html>
   );

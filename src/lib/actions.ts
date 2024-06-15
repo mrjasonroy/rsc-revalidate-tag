@@ -2,12 +2,13 @@
 
 import { revalidateTag } from 'next/cache';
 import prisma from './db';
+import { redirect } from 'next/navigation';
 
 async function createTodo(formData: FormData) {
   const title = formData.get('title') as string;
   const description = formData.get('description') as string ?? null;
   const completed = formData.get('completed') === 'true';
-  const todo = prisma.todos.create({
+  const todo = await prisma.todos.create({
     data: {
       title,
       completed,
@@ -15,7 +16,7 @@ async function createTodo(formData: FormData) {
     }
   });
   revalidateTag('todos');
-  return todo;
+  redirect(`/todo/${todo.id}`)
 }
 async function updateTodo(formData: FormData) {
   const rawFormData = {
@@ -24,7 +25,7 @@ async function updateTodo(formData: FormData) {
     description: formData.get('description') as string,
     complete: formData.get('complete') === 'true',
   };
-  const todo = prisma.todos.update({
+  const todo = await prisma.todos.update({
     where: { id: rawFormData.id },
     data: {
       title: rawFormData.title,
@@ -38,7 +39,7 @@ async function updateTodo(formData: FormData) {
   return todo;
 }
 async function deleteTodo(id: string) {
-  const todo = prisma.todos.delete({
+  await prisma.todos.delete({
     where: { id },
   });
   revalidateTag('todos');
@@ -47,7 +48,7 @@ async function deleteTodo(id: string) {
 }
 async function createEnemy(formData: FormData) {
   const name = formData.get('name') as string;
-  const enemy = prisma.enemies.create({
+  const enemy = await prisma.enemies.create({
     data: {
       name,
     }
