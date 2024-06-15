@@ -23,8 +23,8 @@ I was trying to show that you could use revalidateTag or revlidatePath without t
 
 ## Branches
 
-- The main branch is the example  the revalidate tag. 
-- The `revalidate-path` branch is the example with the revalidate path and parallel routes.
+- The main branch is the example  the revalidate tag. Working example [here](https://rsc-revalidate-tag.vercel.app/)
+- The `revalidate-path` branch is the example with the revalidate path and parallel routes. Working example [here](https://rsc-revalidate-jk3plcyuc-mrjasonroys-projects.vercel.app/)
 
 ## Learn More
 

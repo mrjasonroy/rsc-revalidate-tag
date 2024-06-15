@@ -4,7 +4,7 @@ import Link from 'next/link';
 function GithubLink() {
   return (
     <Link
-      href="#"
+      href="https://github.com/mrjasonroy/rsc-revalidate-tag/tree/parallel-routes"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-4 right-4 rounded-full bg-gray-900 p-3 text-white hover:bg-gray-800"
