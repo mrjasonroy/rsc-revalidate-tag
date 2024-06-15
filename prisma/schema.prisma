@@ -5,6 +5,7 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
 model Todos {
@@ -13,5 +14,15 @@ model Todos {
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @default(now()) @map("updated_at")
   description String?
-  completed Boolean? @default(false)
+  completed Boolean @default(false)
+  @@map("todos")
+}
+
+model Enemies {
+  id          String   @id @default(cuid())
+  name        String
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @default(now()) @map("updated_at")
+  description String?
+  @@map("enemies")
 }
